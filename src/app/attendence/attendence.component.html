@@ -1,0 +1,63 @@
+<h1 mat-dialog-title>Update Attendence Details</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter name</mat-label>
+      <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>InTime</mat-label>
+      <input matInput type="time" formControlName="inTime" required>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>OutTime</mat-label>
+      <input matInput type="time" formControlName="outTime" required>
+      <!-- <mat-icon matSuffix>phone</mat-icon> -->
+    </mat-form-field>
+
+    <!-- <mat-form-field appearance="outline">
+      <mat-label>Joining date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="joiningDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contract</mat-label>
+      <input matInput type="number" formControlName="contract" required>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>WFH Or WFO</mat-label>
+      <input matInput placeholder="WFH/WFO" formControlName="wfoWfh">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Assets</mat-label>
+      <input matInput placeholder="assets" formControlName="assets">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Salary</mat-label>
+      <input matInput placeholder="salary" formControlName="salary">
+    </mat-form-field> -->
+
+  </form>
+
+
+
+  <!-- <mat-form-field appearance="outline">
+
+  </mat-form-field> -->
+
+</div>
+
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-raised-button color="primary" (click)="addEmployeeDetails()">{{actionBtn}}</button>
+</div>

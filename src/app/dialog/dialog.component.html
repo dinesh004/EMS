@@ -1,0 +1,83 @@
+
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <mat-form-field appearance="outline">
+      <mat-label>Enter name</mat-label>
+      <input matInput placeholder="name" formControlName="name">
+    </mat-form-field>
+    <mat-form-field appearance="outline">
+      <mat-label>Enter Address</mat-label>
+      <input matInput placeholder="Address" formControlName="address">
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Phone number</mat-label>
+      <input matInput type="number" formControlName="phone" required>
+      <mat-icon matSuffix>phone</mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Joining date</mat-label>
+      <input matInput [matDatepicker]="picker" formControlName="joiningDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Contract</mat-label>
+      <input matInput type="number" formControlName="contract" required>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>WFH Or WFO</mat-label>
+      <input matInput type="text" placeholder="WFH/WFO" formControlName="wfoWfh">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Assets</mat-label>
+      <input matInput placeholder="assets" formControlName="assets">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline">
+      <mat-label>Salary</mat-label>
+      <input matInput type="number" placeholder="salary" formControlName="salary">
+    </mat-form-field>
+
+
+
+  <!-- <mat-form-field appearance="outline">
+
+  </mat-form-field> -->
+
+
+  <div class="text-center">
+    <input class="form-control" type="file"
+            (change)="onChange($event)">
+
+    <button (click)="onUpload()"
+        class="btn btn-success upload1">
+        Upload
+    </button>
+</div>
+
+
+  <!-- <div class="container">
+    <div class="row mt-5">
+      <div class="col-md-4">
+        <div class="mb-3"> -->
+          <!-- <input placeholder="Upload image" class="form-control" name="icon" (change)="upload($event)"
+                  accept=".jpg, .jpeg, .png" type="file" required /> -->
+        <!-- </div>
+      </div>
+    </div>
+   </div> -->
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-button mat-dialog-close mat-flat-button>Cancel</button>
+  <button mat-raised-button color="primary" (click)="addEmployeeDetails()">{{actionBtn}}</button>
+</div>
+

@@ -1,0 +1,35 @@
+<h1 mat-dialog-title>Select Date</h1>
+<div mat-dialog-content>
+  <form [formGroup]="form">
+
+    <mat-form-field appearance="outline">
+      <mat-label>Date</mat-label>
+      <input matInput [matDatepicker]="picker5" formControlName="date" (dateChange)="dateChanged($event)">
+      <mat-hint>YYYY/MM/DD</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+      <mat-datepicker #picker5></mat-datepicker>
+    </mat-form-field>
+
+  </form>
+
+  <!-- <mat-form-field appearance="outline">
+
+  </mat-form-field> -->
+
+</div>
+
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-button mat-dialog-close mat-flat-button>Cancel</button>
+  <button mat-raised-button color="primary" (click)="addAttDetails()">{{actionBtn}}</button>
+</div>
+
+
+
+
+
+
+
+
+

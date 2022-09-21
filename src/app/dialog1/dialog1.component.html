@@ -1,0 +1,51 @@
+
+<div mat-dialog-content>
+  <form [formGroup]="form">
+    <!-- {{empArray|json}} -->
+    <mat-form-field appearance="outline">
+      <mat-label>Employee name</mat-label>
+
+      <mat-select formControlName="name">
+        <!-- <mat-label>Employee name</mat-label> -->
+        <!-- <input matInput placeholder="name" formControlName="name"> -->
+        <mat-option  [value]="emp.name" *ngFor="let emp of empArray; let i = index" >{{emp.name}}</mat-option>
+      </mat-select>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>From date</mat-label>
+      <input matInput [matDatepicker]="picker1" formControlName="fromDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+      <mat-datepicker #picker1></mat-datepicker>
+    </mat-form-field>
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>To date</mat-label>
+      <input matInput [matDatepicker]="picker2" formControlName="toDate">
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
+
+
+
+    <mat-form-field appearance="outline">
+      <mat-label>Remark</mat-label>
+      <input matInput formControlName="remark" required>
+    </mat-form-field>
+
+  <!-- <mat-form-field appearance="outline">
+
+  </mat-form-field> -->
+
+
+
+
+
+<div mat-dialog-action [align]="'end'">
+  <button mat-button mat-dialog-close mat-flat-button>Cancel</button>
+  <button mat-raised-button color="primary" (click)="addLeaveDetails()">{{actionBtn}}</button>
+</div>
