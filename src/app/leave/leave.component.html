@@ -23,13 +23,13 @@
 <!-- Fruit Column -->
 <ng-container matColumnDef="fromDate">
   <th mat-header-cell *matHeaderCellDef mat-sort-header> From Date </th>
-  <td mat-cell *matCellDef="let row"> {{row.fromDate}} </td>
+  <td mat-cell *matCellDef="let row"> {{row.fromDate | date}} </td>
 </ng-container>
 
 <!-- Fruit Column -->
 <ng-container matColumnDef="toDate">
   <th mat-header-cell *matHeaderCellDef mat-sort-header> To Date </th>
-  <td mat-cell *matCellDef="let row"> {{row.toDate}} </td>
+  <td mat-cell *matCellDef="let row"> {{row.toDate | date}} </td>
 </ng-container>
 
 

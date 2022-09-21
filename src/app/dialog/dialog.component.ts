@@ -86,12 +86,12 @@ addEmployeeDetails(){
       this.api.postEmployee(this.form.value)
       .subscribe({
         next:(res)=>{
-          this.toast.success({detail:"Success Message", summary:"Employee Data Added Successfully", duration:5000})
+          this.toast.success({detail:"Success Message", summary:res.message, duration:5000})
           this.form.reset();
           this.dialogRef.close('save');
         },
-        error:()=>{
-          this.toast.error({detail:"Error Message", summary:"Enter While adding the employee", duration:5000})
+        error:(res)=>{
+          this.toast.error({detail:"Error Message", summary:res.message, duration:5000})
 
         }
       })
@@ -106,12 +106,12 @@ updateEmploye(){
   this.api.putEmployee(this.form.value,this.editData._id)
   .subscribe({
     next:(res)=>{
-      this.toast.success({detail:"Success Message", summary:"Employee Data Updated Successfully", duration:5000})
+      this.toast.success({detail:"Success Message", summary:"Employee Data Update Successfully", duration:5000})
       this.form.reset();
       this.dialogRef.close('Update')
       window.location.reload()
     },
-    error:()=>{
+    error:(res)=>{
       this.toast.error({detail:"Error Message", summary:"Error while Updating the record!!", duration:5000})
     }
   })
