@@ -135,7 +135,7 @@ deleteAttendance(id: number){
 
 
 putAttendace(data: any, id: number){
-  return this.http.put<any>("https://employee-deteils.herokuapp.com/update?date="+id, data)
+  return this.http.put<any>("https://employee-deteils.herokuapp.com/updateAttendance?attendanceId="+id, data)
 }
 
 

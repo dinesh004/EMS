@@ -20,6 +20,8 @@ export class Attendence1Component implements OnInit {
   dataSource!: MatTableDataSource<any>
   longDate = "MMMM d, y"
 
+  showIf:boolean=false
+
   @ViewChild(MatPaginator) paginator!: MatPaginator;
   @ViewChild(MatSort) sort!: MatSort;
 
@@ -49,6 +51,7 @@ this.api.getAttendace().subscribe((result)=>{
 }
 
 openDialog() {
+  this.showIf=true
   this.dialog.open(DialogAttendenceComponent, {
   width:'30%'
    }).afterClosed().subscribe(val=>{
