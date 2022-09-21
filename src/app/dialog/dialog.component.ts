@@ -40,7 +40,7 @@ export class DialogComponent implements OnInit {
         wfoWfh : ['', Validators.required],
         assets : ['', Validators.required],
         salary : ['', Validators.required],
-        documents : ['', Validators.required]
+        // documents : ['', Validators.required]
     })
 
     if(this.editData){
@@ -53,31 +53,31 @@ export class DialogComponent implements OnInit {
       this.form.controls['wfoWfh'].setValue(this.editData.wfoWfh);
       this.form.controls['assets'].setValue(this.editData.assets);
       this.form.controls['salary'].setValue(this.editData.salary);
-      this.form.controls['documents'].setValue(this.editData.documents);
+      // this.form.controls['documents'].setValue(this.editData.documents);
     }
 
   }
 // On file Select
-onChange(event: any) {
-  this.file = event.target.files[0];
-}
+// onChange(event: any) {
+//   this.file = event.target.files[0];
+// }
 
 // OnClick of button Upload
-onUpload() {
-  this.loading = !this.loading;
-  console.log(this.file);
-  this.fileUploadService.upload(this.file).subscribe(
-      (event: any) => {
-          if (typeof (event) === 'object') {
+// onUpload() {
+//   this.loading = !this.loading;
+//   console.log(this.file);
+//   this.fileUploadService.upload(this.file).subscribe(
+//       (event: any) => {
+//           if (typeof (event) === 'object') {
 
-              // Short link via api response
-              this.shortLink = event.link;
+//               // Short link via api response
+//               this.shortLink = event.link;
 
-              this.loading = false; // Flag variable
-          }
-      }
-  );
-}
+//               this.loading = false; // Flag variable
+//           }
+//       }
+//   );
+// }
 
 
 addEmployeeDetails(){
